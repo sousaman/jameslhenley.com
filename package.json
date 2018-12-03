@@ -1,0 +1,31 @@
+{
+  "name": "jameslhenley.com",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "dev": "concurrently --kill-others-on-fail \"node server.js\" \"yarn client\"",
+    "build": "cd client && yarn install && yarn build",
+    "start": "yarn build & node server.js"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "calendario": "^1.1.4",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "firebase": "^4.13.1",
+    "holiday": "^1.0.0",
+    "jquery": "^3.3.1",
+    "method-override": "^2.3.10",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
+    "path": "^0.12.7",
+    "react-scripts": "^1.1.4",
+    "sequelize": "^4.37.6",
+    "twilio": "^3.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  }
+}
