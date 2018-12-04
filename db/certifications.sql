@@ -16,6 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `certifications`
+--
+
+DROP TABLE IF EXISTS `certifications`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `certifications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `entity` varchar(255) DEFAULT NULL,
+  `entityLink` varchar(255) DEFAULT NULL,
+  `entityImage` blob,
+  `denotation` varchar(255) DEFAULT NULL,
+  `shortDenote` varchar(255) DEFAULT NULL,
+  `startDenote` varchar(255) DEFAULT NULL,
+  `endDenote` varchar(255) DEFAULT NULL,
+  `responsibilities` text,
+  `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `certifications`
 --
 
@@ -34,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-03 23:00:22
+-- Dump completed on 2018-12-03 23:14:59

@@ -16,6 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `professions`
+--
+
+DROP TABLE IF EXISTS `professions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `professions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company` varchar(255) DEFAULT NULL,
+  `websiteLink` varchar(255) DEFAULT NULL,
+  `jobImage` blob,
+  `startYear` varchar(255) DEFAULT NULL,
+  `startMonth` varchar(255) DEFAULT NULL,
+  `endYear` varchar(255) DEFAULT NULL,
+  `endMonth` varchar(255) DEFAULT NULL,
+  `jobTitle` varchar(255) DEFAULT NULL,
+  `responsibilities` text,
+  `createdAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updatedAt` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `professions`
 --
 
@@ -34,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-03 23:00:23
+-- Dump completed on 2018-12-03 23:14:59
