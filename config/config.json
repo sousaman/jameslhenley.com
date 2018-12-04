@@ -3,14 +3,14 @@
     "username": "root",
     "password": "peach0511",
     "database": "resume_db",
-    "host": "127.0.0.1",
+    "host": "178.128.153.117",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": "peach0511",
     "database": "resume_db",
-    "host": "127.0.0.1",
+    "host": "178.128.153.117",
     "dialect": "mysql"
   }
 }
