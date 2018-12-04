@@ -1,12 +1,16 @@
 {
   "development": {
-    "username": "jhenley",
-    "password": "Peach0511",
+    "username": "root",
+    "password": "peach0511",
     "database": "resume_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL"
+    "username": "root",
+    "password": "peach0511",
+    "database": "resume_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   }
 }
