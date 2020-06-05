@@ -1,8 +1,26 @@
-module.exports = function (sequelize, DataTypes) {
-    var General = sequelize.define("General", {
-        intro: DataTypes.TEXT,
-        headline1: DataTypes.STRING,
-        headline2: DataTypes.STRING,
-    })
-    return General;
-}
+var keystone = require('keystone');
+var Types = keystone.Field.Types;
+
+/**
+ * General Model
+ * ==========
+ */
+var General = new keystone.List('General');
+
+General.add({
+	intro: { type: Types.Textarea, initial: true },
+	headline1: { type: Types.Text, initial: true },
+    headline2: { type: Types.Text, initial: true }
+});
+
+
+/**
+ * Relationships
+ */
+
+
+/**
+ * Registration
+ */
+General.defaultColumns = 'school, degree, gradMonth, gradYear';
+General.register();

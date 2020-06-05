@@ -1,14 +1,30 @@
-module.exports = function (sequelize, DataTypes) {
-    var Education = sequelize.define("Education", {
-        school: DataTypes.STRING,
-        cityState: DataTypes.STRING,
-        gradMonth: DataTypes.STRING,
-        gradYear: DataTypes.STRING,
-        degree: DataTypes.STRING,
-        websiteLink: DataTypes.STRING,
-        minor1: DataTypes.STRING,
-        minor2: DataTypes.STRING,
-        logo: DataTypes.BLOB
-    })
-    return Education;
-}
+var keystone = require('keystone');
+var Types = keystone.Field.Types;
+
+/**
+ * Education Model
+ * ==========
+ */
+var Education = new keystone.List('Education');
+
+Education.add({
+	school: { type: Types.Text, initial: true },
+	cityState: { type: Types.Text, initial: true },
+    gradDate: { type: Types.Date, initial: true },
+    degree: { type: Types.Text, initial: true },
+    websiteLink: { type: Types.Url, initial: true },
+    minors: { type: Types.TextArray, initial: true },
+    logo: { type: Types.CloudinaryImage, initial: true },
+});
+
+
+/**
+ * Relationships
+ */
+
+
+/**
+ * Registration
+ */
+Education.defaultColumns = 'school, degree, gradMonth, gradYear';
+Education.register();

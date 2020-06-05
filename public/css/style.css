@@ -83,6 +83,50 @@ li {
 	text-align: justify;
 }
 
+.redirect-view {
+    background-image: url('/images/man-in-red-jacket-standing-outside-of-cave-in-front-of-three-949193.jpg');
+
+	height: 100%;
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.redirect-mask {
+    height: 100%;
+}
+
+.redirect-mask {
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-2 {
+    background: url("https://mdbootstrap.com/img/Photos/Others/img (40).jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.top-nav-collapse {
+    background-color: #4285F4;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #4285F4;
+    }
+}
+html,
+body,
+header,
+.view {
+    height: 100%;
+}
+
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1024px) {
 
@@ -91,4 +135,14 @@ li {
 	.bgimg-3 {
 		background-attachment: scroll;
 	}
+}
+
+@media (max-width: 740px) {
+	.redirect-mask {
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .redirect-row {
+        margin-top: 200px;
+    }
 }

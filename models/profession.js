@@ -1,14 +1,30 @@
-module.exports = function (sequelize, DataTypes) {
-    var Profession = sequelize.define("Profession", {
-        company: DataTypes.STRING,
-        websiteLink: DataTypes.STRING,
-        jobImage: DataTypes.BLOB,
-        startYear: DataTypes.STRING,
-        startMonth: DataTypes.STRING,
-        endYear: DataTypes.STRING,
-        endMonth: DataTypes.STRING,
-        jobTitle: DataTypes.STRING,
-        responsibilities: DataTypes.TEXT
-    })
-    return Profession;
-}
+var keystone = require('keystone');
+var Types = keystone.Field.Types;
+
+/**
+ * Profession Model
+ * ==========
+ */
+var Profession = new keystone.List('Profession');
+
+Profession.add({
+	company: { type: Types.Text, initial: true },
+    websiteLink: { type: Types.Url, initial: true },
+    jobImage: { type: Types.CloudinaryImage, initial: true },
+    startDate: { type: Types.Date, initial: true },
+    endDate: { type: Types.Date, initial: true },
+    jobTitle: { type: Types.Text, initial: true },
+    responsibilities: { type: Types.Textarea, initial: true }
+});
+
+
+/**
+ * Relationships
+ */
+
+
+/**
+ * Registration
+ */
+Profession.defaultColumns = 'company, jobTitle, startDate, endDate';
+Profession.register();

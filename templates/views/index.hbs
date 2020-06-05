@@ -1,0 +1,178 @@
+<div class="container-responsive bgimg-1">
+    <div class="row">
+        {{!-- <div class="col"></div> --}}
+        <h1 class="display-1 col text-center rounded-circle border-dark mt-4">
+            <a class="text-white" href="/">James Henley</a>
+        </h1>
+        {{!-- <div class="col">
+            <nav class="col navbar">
+                <div class="container-fluid justify-content-between">
+                    <form class="col col-auto container">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item mx-auto">
+                                <a class="nav-link btn btn-dark" href="/portfolio">Portfolio</a>
+                            </li>
+                            <li class="nav-item mx-auto">
+                                <a class="nav-link btn"></a>
+                            </li>
+                            <li class="nav-item mx-auto">
+                                <a class="nav-link btn btn-dark" href="/contact">Contact</a>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </nav>
+        </div> --}}
+    </div>
+
+    <strong>
+        <hr>
+    </strong>
+
+    {{#each data.general}}
+    <div class="row">
+        <div class="col-2"></div>
+        <h2 class="col bg-dark text-white text-center rounded">{{headline1}} x
+            <br> {{headline2}}</h2>
+        <div class="col-2"></div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-2"></div>
+        <p class="col text-white text-center rounded">{{intro}}</p>
+        <div class="col-2"></div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-2"></div>
+        <a href="_blank" class="col bg-dark text-white text-center rounded">Download Me!</a>
+        <div class="col-2"></div>
+    </div>
+
+    {{/each}}
+
+</div>
+
+<div class="education">
+    <h3>Education</h3>
+</div>
+
+<div class="bgimg-2">
+    {{#each data.education}}
+    <div class="row">
+        <div class="col-1">
+            <img id="{{school}}">
+        </div>
+        <h3 class="col bg-dark text-white text-center rounded"><a class="text-white" href="{{websiteLink}}">{{school}}</a></h3>
+        <div class="col-2"></div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col rounded">
+            <h5 class="text-white text-center">{{degree}}</h5>
+            {{#each minor}}
+            <li class="text-white">{{this}}</li>
+            {{/each}}
+        </div>
+        <h5 class="col rounded text-white text-center">{{gradMonth}} {{gradYear}}</h5>
+        <div class="col"></div>
+    </div>
+
+    {{/each}}
+</div>
+
+<div style="position:relative;">
+    <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+        <h3 class="text-white">Professional Experience</h3>
+    </div>
+</div>
+
+{{!-- Need to write javaScript files to dynamically pull the responsibilities and logos --}}
+
+<div class="bgimg-3">
+    {{#each data.professions}}
+    <div class="row">
+        <div class="col-1">
+            <img id="{{company}}">
+        </div>
+        <h3 class="col bg-dark text-white text-center rounded">
+            <a class="text-white" href="{{websiteLink}}">{{company}}</a>
+        </h3>
+        <div class="col-2"></div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col rounded">
+            <h5 class="text-white text-center">Job Responsibilites</h5>
+        </div>
+        {{#if endYear}}
+            <h5 class="col rounded text-white text-center">{{startMonth}} {{startYear}} - {{endMonth}} {{endYear}}</h5>
+        {{/if}}
+        {{#unless endYear}}
+            <h5 class="col rounded text-white text-center">{{startMonth}} {{startYear}} - Present</h5>
+        {{/unless}}
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <h6 class="text-white col">{{jobTitle}}</h6>
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+        {{{responsibilities}}}
+        <div class="col-1"></div>
+    </div>
+
+    {{/each}}
+</div>
+
+<div style="position:relative;">
+    <div style="color:#ddd;background-color:;text-align:center;padding:50px 80px;text-align: justify;">
+        <h3>Certifications</h3>
+    </div>
+</div>
+
+<div class="bgimg-4">
+    {{#each data.certifications}}
+    <div class="row">
+        <div class="col-1">
+            <img id="{{entity}}">
+        </div>
+        <h3 class="col bg-dark text-white text-center rounded">
+            <a class="text-white" href="{{entityLink}}">{{entity}}</a>
+        </h3>
+        <div class="col-2"></div>
+    </div>
+
+    <br>
+
+    
+
+        {{#if denotation}}
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col">
+                <h5 class="text-white text-center">{{denotation}}</h5>
+            </div>
+            <h5 class="col rounded text-white text-center">{{shortDenote}}: {{startDenote}} - {{endDenote}}</h5>
+            <div class="col"></div>
+        </div>
+            {{{responsibilities}}}
+        {{/if}}
+        
+
+    {{#unless denotation}}
+        {{{responsibilities}}}
+    {{/unless}} 
+{{/each}}
+</div>
