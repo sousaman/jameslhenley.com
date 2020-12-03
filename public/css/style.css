@@ -103,8 +103,7 @@ li {
 }
 
 .intro-2 {
-    background: url("https://mdbootstrap.com/img/Photos/Others/img (40).jpg") no-repeat center center;
-    background-size: cover;
+    background-color: white;
 }
 
 .navbar {
