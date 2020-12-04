@@ -13,8 +13,8 @@ var handlebars = require('express-handlebars');
 keystone.init({
 	'name': 'jameslhenley.com',
 	'brand': 'jameslhenley.com',
-	'cookie secret': process.env.SESSION_STORE,
-	'cloudinary config': process.env.CLOUDINARY_URL,
+	'cookie secret': '3609416e7f5aca52de40cbf352a6e50546a249832a11654a65226bcdebc742ec57486187c9afe0cb1e2795c27a16558b3742d793fe545998f2196b986f75c4a6',
+	'cloudinary config': 'cloudinary://333779167276662:_8jbSi9FB3sWYrfimcl8VKh34rI@keystone-demo',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
@@ -67,7 +67,7 @@ keystone.set('nav', {
 // Start Keystone to connect to your database and initialise the web server
 
 
-if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
+/* if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	console.log('----------------------------------------'
 	+ '\nWARNING: MISSING MAILGUN CREDENTIALS'
 	+ '\n----------------------------------------'
@@ -75,7 +75,7 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	+ '\nmailgun credentials. Attempts to send will fail.'
 	+ '\n\nCreate a mailgun account and add the credentials to the .env file to'
 	+ '\nset up your mailgun integration');
-}
+} */
 
 
 keystone.start();
