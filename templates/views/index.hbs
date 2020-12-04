@@ -1,175 +1,180 @@
-<div class="container-responsive bgimg-1">
-    <div class="row">
-        {{!-- <div class="col"></div> --}}
-        {{!-- <div class="col">
-            <nav class="col navbar">
-                <div class="container-fluid justify-content-between">
-                    <form class="col col-auto container">
-                        <ul class="nav nav-pills">
-                            <li class="nav-item mx-auto">
-                                <a class="nav-link btn btn-dark" href="/portfolio">Portfolio</a>
-                            </li>
-                            <li class="nav-item mx-auto">
-                                <a class="nav-link btn"></a>
-                            </li>
-                            <li class="nav-item mx-auto">
-                                <a class="nav-link btn btn-dark" href="/contact">Contact</a>
-                            </li>
-                        </ul>
-                    </form>
-                </div>
-            </nav>
-        </div> --}}
-    </div>
+<div class="container-fluid p-0">
 
-    <strong>
-        <hr>
-    </strong>
-
-    {{#each data.general}}
-    <div class="row">
-        <div class="col-2"></div>
-        <h2 class="col bg-dark text-white text-center rounded">{{headline1}} x
-            <br> {{headline2}}</h2>
-        <div class="col-2"></div>
-    </div>
-
-    <br>
-
-    <div class="row">
-        <div class="col-2"></div>
-        <p class="col text-white text-center rounded">{{intro}}</p>
-        <div class="col-2"></div>
-    </div>
-
-    <br>
-
-    <div class="row">
-        <div class="col-2"></div>
-        <a href="_blank" class="col bg-dark text-white text-center rounded">Download Me!</a>
-        <div class="col-2"></div>
-    </div>
-
-    {{/each}}
-
-</div>
-
-<div class="education">
-    <h3>Education</h3>
-</div>
-
-<div class="bgimg-2">
-    {{#each data.education}}
-    <div class="row">
-        <div class="col-1">
-            <img id="{{school}}">
-        </div>
-        <h3 class="col bg-dark text-white text-center rounded"><a class="text-white" href="{{websiteLink}}">{{school}}</a></h3>
-        <div class="col-2"></div>
-    </div>
-
-    <br>
-
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col rounded">
-            <h5 class="text-white text-center">{{degree}}</h5>
-            {{#each minor}}
-            <li class="text-white">{{this}}</li>
+    {{!-- Cover --}}
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+            <h1 class="mb-0">James
+                <span class="text-primary">Henley</span>
+            </h1>
+            {{#each data.general}}
+            <div class="subheading mb-5">Address
+                <a href="mailto:{{contactEmail}}">{{contactEmail}}</a>
+            </div>
+            <p class="lead mb-5">{{intro}}</p>
             {{/each}}
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/jameshenley1/" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/sousaman" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/james.l.henley/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
         </div>
-        <h5 class="col rounded text-white text-center">{{gradMonth}} {{gradYear}}</h5>
-        <div class="col"></div>
-    </div>
+    </section>
 
-    {{/each}}
-</div>
+    <hr class="m-0">
 
-<div style="position:relative;">
-    <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
-        <h3 class="text-white">Professional Experience</h3>
-    </div>
-</div>
 
-{{!-- Need to write javaScript files to dynamically pull the responsibilities and logos --}}
+    {{!-- Experience Section --}}
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+        <div class="my-auto">
+            <h2 class="mb-5">Experience</h2>
 
-<div class="bgimg-3">
-    {{#each data.professions}}
-    <div class="row">
-        <div class="col-1">
-            <img id="{{company}}">
+            {{#each data.professions}}
+            <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                <div class="resume-content mr-auto">
+                    <h3 class="mb-0">{{jobTitle}}</h3>
+                    <div class="subheading mb-3"><a href="{{websiteLink}}" target="_blank">{{company}}</a></div>
+                    <p>{{{responsibilities}}}</p>
+                </div>
+                <div class="resume-date text-md-right">
+                    {{#if endDate}}
+                    <span class="subheading text-primary">{{startDate}} - {{endDate}}</span>
+                    {{/if}}
+                    {{#unless endDate}}
+                    <span class="subheading text-primary">{{startDate}} - Present</span>
+                    {{/unless}}
+                </div>
+            </div>
+            {{/each}}
+
         </div>
-        <h3 class="col bg-dark text-white text-center rounded">
-            <a class="text-white" href="{{websiteLink}}">{{company}}</a>
-        </h3>
-        <div class="col-2"></div>
-    </div>
 
-    <br>
+    </section>
 
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="col rounded">
-            <h5 class="text-white text-center">Job Responsibilites</h5>
+    <hr class="m-0">
+
+
+    {{!-- Education --}}
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+        <div class="my-auto">
+            <h2 class="mb-5">Education</h2>
+
+            {{#each data.education}}
+            <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                <div class="resume-content mr-auto">
+                    <h3 class="mb-0"><a class="text-secondary" href="{{websiteLink}}">{{school}}</a></h3>
+                    <div class="subheading text-primary mb-3">{{degree}}</div>
+                    {{!-- {{#each minors}}
+                    <div class="text-primary mb-3">{{this}}</li></div>
+                    {{/each}} --}}
+                </div>
+                <div class="resume-date text-md-right">
+                    <span class="subheading text-primary">{{gradDate}}</span>
+                </div>
+            </div>
+            {{/each}}
+
         </div>
-        {{#if endYear}}
-            <h5 class="col rounded text-white text-center">{{startMonth}} {{startYear}} - {{endMonth}} {{endYear}}</h5>
-        {{/if}}
-        {{#unless endYear}}
-            <h5 class="col rounded text-white text-center">{{startMonth}} {{startYear}} - Present</h5>
-        {{/unless}}
-        <div class="col"></div>
-    </div>
-    <div class="row">
-        <div class="col-1"></div>
-        <h6 class="text-white col">{{jobTitle}}</h6>
-        <div class="col-1"></div>
-    </div>
-    <div class="row">
-        {{{responsibilities}}}
-        <div class="col-1"></div>
-    </div>
+    </section>
 
-    {{/each}}
-</div>
+    <hr class="m-0">
 
-<div style="position:relative;">
-    <div style="color:#ddd;background-color:;text-align:center;padding:50px 80px;text-align: justify;">
-        <h3>Certifications</h3>
-    </div>
-</div>
 
-<div class="bgimg-4">
-    {{#each data.certifications}}
-    <div class="row">
-        <div class="col-1">
-            <img id="{{entity}}">
+    {{!-- Certifications --}}
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="certifications">
+        <div class="my-auto">
+            <h2 class="mb-5">Certifications</h2>
+                {{#each data.certifications}}
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0"><a class="text-secondary" href="{{entityLink}}">{{entity}}</a></h3>
+                        {{#each certification}}
+                        <div class="subheading text-primary mb-3">{{this}}</div>
+                        {{/each}}
+                        {{!-- {{#each minors}}
+                        <div class="text-primary mb-3">{{this}}</li></div>
+                        {{/each}} --}}
+                    </div>
+                    <div class="resume-date text-md-right">
+                        <div class="subheading text-primary">{{denotation}}</div>
+                        <div class="subheading text-primary">{{shortDenote}}: {{startDenote}} - {{endDenote}}</div>
+                    </div>
+                </div>
+                {{/each}}
         </div>
-        <h3 class="col bg-dark text-white text-center rounded">
-            <a class="text-white" href="{{entityLink}}">{{entity}}</a>
-        </h3>
-        <div class="col-2"></div>
-    </div>
+    </section>
 
-    <br>
+
+    <hr class="m-0">
+
+
+    {{!-- Skills --}}
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+        <div class="my-auto">
+            <h2 class="mb-5">Skills</h2>
+
+            <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+            <ul class="list-inline dev-icons">
+                <li class="list-inline-item">
+                    <i class="fab fa-html5"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="fab fa-css3-alt"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="fab fa-js-square"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="fab fa-react"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="fab fa-node-js"></i>
+                </li>
+                <li class="list-inline-item">
+                    <i class="fab fa-npm"></i>
+                </li>
+            </ul>
+
+            {{!-- <div class="subheading mb-3">Workflow</div>
+            <ul class="fa-ul mb-0">
+                <li>
+                    <i class="fa-li fa fa-check"></i>
+                    Mobile-First, Responsive Design</li>
+                <li>
+                    <i class="fa-li fa fa-check"></i>
+                    Cross Browser Testing &amp; Debugging</li>
+            </ul> --}}
+        </div>
+    </section>
 
     
+    <hr class="m-0">
 
-        {{#if denotation}}
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col">
-                <h5 class="text-white text-center">{{denotation}}</h5>
-            </div>
-            <h5 class="col rounded text-white text-center">{{shortDenote}}: {{startDenote}} - {{endDenote}}</h5>
-            <div class="col"></div>
+
+    {{!-- Interests --}}
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
+        <div class="my-auto">
+            <h2 class="mb-5">Interests <br>(Click each interest for my latest developments in each)</h2>
+            {{#each data.interests}}
+            <p><a class="text-secondary subheading" href="{{link}}" target="_blank">{{interest}}</a></p>
+            {{/each}}
+            {{!-- <p class="mb-0">Lorem ipsum dolor sit amet</p> --}}
         </div>
-            {{{responsibilities}}}
-        {{/if}}
-        
+    </section>
 
-    {{#unless denotation}}
-        {{{responsibilities}}}
-    {{/unless}} 
-{{/each}}
 </div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="/public/js/jquery.min.js"></script>
+<script src="/public/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="/public/js/jquery.easing.min.js"></script>
+
+<!-- Custom scripts -->
+<script src="/public/js/resume.js"></script>

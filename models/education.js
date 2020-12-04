@@ -10,7 +10,7 @@ var Education = new keystone.List('Education');
 Education.add({
 	school: { type: Types.Text, initial: true },
 	cityState: { type: Types.Text, initial: true },
-    gradDate: { type: Types.Date, initial: true },
+    gradDate: { type: Types.Text, initial: true },
     degree: { type: Types.Text, initial: true },
     websiteLink: { type: Types.Url, initial: true },
     minors: { type: Types.TextArray, initial: true },

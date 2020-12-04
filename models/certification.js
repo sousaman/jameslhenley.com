@@ -12,6 +12,7 @@ Certification.add({
 	entityLink: { type: Types.Url, initial: true },
     entityImage: { type: Types.CloudinaryImage, initial: true },
     denotation: { type: Types.Text, initial: true },
+    certification: { type: Types.TextArray, inital: true },
     shortDenote: { type: Types.Text, initial: true },
     startDenote: { type: Types.Text, initial: true },
     endDenote: { type: Types.Text, initial: true },

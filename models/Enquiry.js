@@ -61,9 +61,9 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 			to: admins,
 			from: {
 				name: 'jameslhenley.com',
-				email: 'contact@jameslhenley-com.com',
+				email: 'contact@jameslhenley.com',
 			},
-			subject: 'New Enquiry for jameslhenley.com',
+			subject: 'New Come From jameslhenley.com',
 			enquiry: enquiry,
 			brand: brand,
 			layout: false,

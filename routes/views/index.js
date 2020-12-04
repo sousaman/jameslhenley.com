@@ -4,6 +4,7 @@ var Education = keystone.list('Education');
 var General = keystone.list('General');
 var Profession = keystone.list('Profession');
 var Portfolio = keystone.list('Portfolio');
+var Interest = keystone.list('Interest');
 
 exports = module.exports = function (req, res) {
 
@@ -19,6 +20,7 @@ exports = module.exports = function (req, res) {
 		education: [],
 		portfolio: [],
 		professions: [],
+		interests: [],
 		req: req,
 	};
 
@@ -58,7 +60,15 @@ exports = module.exports = function (req, res) {
 								next();
 							}
 							locals.data.certifications = certifications;
-							next();
+							Interest.model.find({}).exec(function (err, interests) {
+								if (err) {
+									console.log(err);
+									req.flash('error', err);
+									next();
+								}
+								locals.data.interests = interests;
+								next();
+							})
 						})
 					})
 				})

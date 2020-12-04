@@ -13,7 +13,8 @@ var handlebars = require('express-handlebars');
 keystone.init({
 	'name': 'jameslhenley.com',
 	'brand': 'jameslhenley.com',
-
+	'cookie secret': process.env.SESSION_STORE,
+	'cloudinary config': process.env.CLOUDINARY_URL,
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
